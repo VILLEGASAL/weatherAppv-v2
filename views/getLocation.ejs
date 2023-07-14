@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <p class="location">
+            <%= location  %>
+        </p>
+    
+        <p>
+            <%= description  %>
+        </p>
+    
+        <p>
+            <%= temp  %><sup> o</sup>C
+        </p>
+
+        <p>
+            <img src=" https://openweathermap.org/img/wn/<%= img %>@2x.png" alt="weather-icon">
+        </p>
+
+        <form action="/getWeatherByCityName" method="POST">
+            <input type="text" name="city" placeholder="Search a city name" autocomplete="off" class="city">
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+
+        <p class="note">
+            <strong>Note: </strong> If there's nothing shows, just refresh your browser or <br>
+            allow the location permission.
+        </p>
+    </div>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
